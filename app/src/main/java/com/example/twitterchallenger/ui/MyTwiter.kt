@@ -42,7 +42,7 @@ fun MyTwiter() {
                 .weight(1f)
                 // .padding(1.dp)
                 .background(Color(0xFF242323))
-        ) {}
+        ) { }
 
     }
 
