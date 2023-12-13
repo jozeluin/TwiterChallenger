@@ -4,7 +4,10 @@ package com.example.twitterchallenger.ui
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+
+
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.InspectableModifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -59,9 +63,16 @@ fun MyTwiter() {
                 .weight(1f)
                 // .padding(1.dp)
                 .background(Color(0xFF242323))
-        ) { }
+        ) {
+            Boxinferior()
+        }
 
     }
+
+}
+
+@Composable
+fun Boxinferior() {
 
 }
 
@@ -170,20 +181,58 @@ fun Mensajes() {
             text = "Descripcion dw dadsobre texto",
             color = Color.White,
         )
-        Card(modifier = Modifier) {
-            BorderStroke(90.dp, Color.Transparent)
-            Image(
-                painter = painterResource(id = R.drawable.profile),
-                contentDescription = "",
-                contentScale = ContentScale.Crop,
+    }
+    Column(
+        modifier = Modifier
+            //.fillMaxSize()
+            .padding(top = 20.dp)
+    ) {
+
+        Image(
+            painter = painterResource(id = R.drawable.profile),
+            contentDescription = "",
+            contentScale = ContentScale.FillWidth,
+            modifier = Modifier
+                .size(width = 250.dp, height = 180.dp)
+                .clip(RoundedCornerShape(30.dp))
+
+        )
+
+        Row(modifier = Modifier
+            .size(height = 40.dp, width = 200.dp)
+            .padding(top = 20.dp)) {
+            Icon(
                 modifier = Modifier
-                    .size(200.dp)
-                    .clip(RoundedCornerShape(32.dp))
+
+
+                    .weight(1f),
+                painter = painterResource(id = R.drawable.ic_chat),
+                tint = Color.White,
+                contentDescription = "null" // decorative element,
+
+            )
+            Icon(
+                modifier = Modifier
+
+
+                    .weight(1f),
+                painter = painterResource(id = R.drawable.ic_like),
+                tint = Color.White,
+                contentDescription = "null" // decorative element,
+
+            )
+            Icon(
+                modifier = Modifier
+
+
+                    .weight(1f),
+                painter = painterResource(id = R.drawable.ic_rt),
+                tint = Color.White,
+                contentDescription = "null" // decorative element,
+
             )
 
-
         }
-
     }
 
 
